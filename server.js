@@ -3,6 +3,7 @@ const cors = require("cors");
 const dotenv=require("dotenv")
 const dbConnection=require("./Config/Mongodb")
 const UserRoutes=require("./Routes/UserRoutes")
+const ProductRoutes=require("./Routes/ProductRoutes")
 
 const app = express();
 dotenv.config()
@@ -22,6 +23,7 @@ app.get("/", (req, res) => {
 // api routes here
 
 app.use("/api/v1/users",UserRoutes)
+app.use("/api/v1/products",ProductRoutes)
 
 
 app.listen(Port, () => {
